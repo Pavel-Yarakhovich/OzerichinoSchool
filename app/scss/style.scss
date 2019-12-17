@@ -28,6 +28,7 @@ body {
 	background: url('../img/header_bg.jpg') no-repeat center center;
 	background-size: cover;
 	display: flex;
+	flex-flow: column;
 	align-items: center;
 	justify-content: center;
 	position: relative;
@@ -56,9 +57,13 @@ body {
 		flex-flow: column;
 		justify-content: center;
 		align-items: center;
+		padding: 0 60px;
+		box-sizing: border-box;
+		text-align: center;
 
 		p:first-child {
 			font-size: 1.2rem;
+			padding: 0 50px;
 		}
 
 		p:last-child {
@@ -70,11 +75,11 @@ body {
 
 	&__main-menu {
 		background-color: $green;
-		position: absolute;
+		position: relative;
 		min-height: 10vh;
 		width: 100%;
 		left: 0;
-		top: 45vh;
+		top: 10vh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -85,6 +90,7 @@ body {
 			justify-content: center;
 			align-items: stretch;
 			list-style: none;
+			flex-wrap: wrap;
 			margin: 0;
 			padding: 0;
 			height: 100%;
@@ -102,6 +108,7 @@ body {
 					padding: 0;
 					list-style: none;
 					position: absolute;
+					z-index: 2;
 					left: 50%;
 					transform: translateX(-50%);
 					top: 61px;
@@ -110,7 +117,6 @@ body {
 					justify-content: center;
 					background: $green;
 					box-shadow: 0 0 8px darken($green, 20%);
-					
 
 					&__item {
 						padding: 0 10px;
@@ -194,6 +200,52 @@ body {
 
 .main {
 	min-height: 200vh;
+	padding: 70px 20px 20px 250px;
+	box-sizing: border-box;
+
+	.news {
+		display: flex;
+		flex-flow: column;
+
+		&__item {
+			display: flex;
+			flex-flow: column;
+			margin-bottom: 40px;
+
+			&_title {
+				line-height: 70px;
+				margin: 0 0 15px;
+				padding: 0 15px;
+				position: relative;
+				border-bottom: 2px solid $grey;
+			}
+
+			&_images {
+				height: 250px;
+				display: flex;
+
+				&-item {
+					width: auto;
+					height: 100%;
+					margin: 5px;
+				}
+			}
+
+			&_text {
+				font-size: 1rem;
+				line-height: 1.4;
+				text-align: justify;
+				text-indent: 30px;
+			}
+
+			&_information {
+				font-size: 0.8rem;
+				display: flex;
+				justify-content: space-between;
+				font-style: italic;
+			}
+		}
+	}
 }
 
 .footer {
