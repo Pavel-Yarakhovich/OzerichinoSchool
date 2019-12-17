@@ -1,2 +1,2 @@
-# OzerichinoSchool
-Social project: website for school
+# Lemon
+Landing page (adaptive)

@@ -1,0 +1,223 @@
+@import "../../node_modules/normalize.css/normalize";
+// @import "../../node_modules/slick-carousel/slick/slick";
+// @import "../../node_modules/magnific-popup/dist/magnific-popup";
+
+@import 'variables';
+@import 'mixins';
+@import 'animations';
+
+a {
+	text-decoration: none;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	width: 100%;
+	min-height: 100vh;
+	background-color: $bg;
+	font-family: 'Lora', serif;
+	margin: 0;
+}
+
+.header {
+	min-height: 50vh;
+	width: 100%;
+	background: url('../img/header_bg.jpg') no-repeat center center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+
+	&__min-education {
+		position: absolute;
+		width: 60px;
+		height: 60px;
+		top: 20px;
+		left: 20px;
+		font-size: 0;
+		background: url(../img/min_obr.png) no-repeat center center;
+		background-size: contain;
+		opacity: 0.5;
+		transition: all 0.3s ease-out;
+
+		&:hover {
+			opacity: 1;
+			transform: scale(1.1);
+		}
+	}
+
+	&__title {
+		color: $white-bg;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+
+		p:first-child {
+			font-size: 1.2rem;
+		}
+
+		p:last-child {
+			font-size: 1.4rem;
+			font-weight: 700;
+			letter-spacing: 1px;
+		}
+	}
+
+	&__main-menu {
+		background-color: $green;
+		position: absolute;
+		min-height: 10vh;
+		width: 100%;
+		left: 0;
+		top: 45vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
+
+		&_list {
+			display: flex;
+			justify-content: center;
+			align-items: stretch;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			height: 100%;
+
+			&-item {
+				margin: 0 10px;
+				position: relative;
+				height: 10vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				.submenu {
+					margin: 0;
+					padding: 0;
+					list-style: none;
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top: 61px;
+					display: none;
+					flex-flow: column;
+					justify-content: center;
+					background: $green;
+					box-shadow: 0 0 8px darken($green, 20%);
+					
+
+					&__item {
+						padding: 0 10px;
+						height: 40px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+
+						&:hover {
+							background-color: rgba(255, 255, 255, 0.1);
+						}
+
+						&_link {
+							color: $grey;
+							white-space: nowrap;
+							font-size: 0.8rem;
+							line-height: 40px;
+							text-transform: uppercase;
+
+							&:hover {
+								color: $white-bg;
+							}
+						}
+					}
+				}
+			}
+
+			&-item:hover .submenu {
+				display: flex;
+			}
+
+			&-link {
+				color: $grey;
+				text-transform: uppercase;
+				transition: all .3s ease;
+
+				&:hover {
+					color: $white-bg;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+
+	&__vertical-menu {
+		display: none;
+	}
+
+	&__vertical-menu-show {
+		background-color: $green;
+		position: fixed;
+		height: 100vh;
+		width: auto;
+		left: 0;
+		top: 0;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+
+		ul {
+			display: flex;
+			justify-content: center;
+			flex-flow: column;
+			align-items: center;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				margin: 10px;
+			}
+
+			a {
+				color: $bg;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+.main {
+	min-height: 200vh;
+}
+
+.footer {
+	min-height: 20vh;
+	width: 100%;
+	background: $green;
+
+	&__container {
+		width: 1000px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 0;
+		box-sizing: border-box;
+
+		.information {
+			color: $white-bg;
+		}
+
+		.map {
+			height: 200px;
+			width: 350px;
+			border: 1px solid $bg;
+		}
+	}
+}
