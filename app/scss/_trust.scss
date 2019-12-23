@@ -1,0 +1,104 @@
+.trust {
+	display: none;
+	position: fixed;
+	z-index: 100;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 0vw;
+	height: 0vh;
+	background: rgba(255,255,255,0.5);
+	transition: all 0.3s ease;
+
+	&__info {
+		position: fixed;
+		z-index: 101;
+		width: 70vw;
+		height: 70vh;
+		padding-left: 470px;
+		box-sizing: border-box;
+		border-radius: 12px;
+		background: url(../img/tel_trust.jpeg) no-repeat left bottom, $white;
+		background-size: contain;
+		box-shadow: 0 0 15px $blue;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
+		transition: top 0.2s ease 0.2s;
+
+		&_close {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			width: 30px;
+			height: 30px;
+
+			&:before,
+			&:after {
+				position: absolute;
+				content: '';
+				display: block;
+				width: 100%;
+				height: 4px;
+				top: 50%;
+				left: 50%;
+				border-radius: 2px;
+				background: $blue;
+				transform-origin: center center;
+				transition: all 0.3s ease;
+			}
+
+			&:before {
+				transform: translate(-50%, -50%) rotate(45deg);
+			}
+			&:after {
+				transform: translate(-50%, -50%) rotate(-45deg);
+			}
+
+			&:hover {
+				cursor: pointer;
+
+				&:before,
+				&:after {
+					background: $orange;
+					width: 110%;
+				}
+			}
+		}
+
+		&_header {
+			margin: 0 0 20px;
+		}
+
+		&_content {
+			display: flex;
+			flex-flow: column;
+			justify-content: flex-start;
+
+			.text {
+				text-transform: uppercase;
+				text-align: center;
+				display: block;
+				margin: 5px 0;
+			}
+
+			.phone {
+				display: block;
+				text-align: center;
+				margin: 10px 0;
+				color: $blue;
+				font-size: 1.2rem;
+			}
+		}
+	}
+}
+
+.trust-visible {
+	display: block;
+	width: 100vw;
+	height: 100vh;
+}

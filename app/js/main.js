@@ -1,22 +1,22 @@
-// import simpleParallax from 'simple-parallax-js';
+// const trustLink = document.getElementById('trust');
+// const closeTrustBtn = document.querySelector('.trust__info_close');
+// const trustPopUp = document.getElementById('trust_pop-up');
+const safetyArts = document.querySelectorAll('.safety');
+const expandBtns = document.querySelectorAll('.expand');
 
-const mainMenu = document.querySelector('.header__main-menu');
-const verticalMenu = document.querySelector('.header__vertical-menu');
-const footer = document.querySelector('.footer');
-let scroll = 0;
+console.log(safetyArts, expandBtns);
 
+// trustLink.addEventListener('click', (e) => {
+// 	e.preventDefault();
+// 	trustPopUp.classList.add('trust-visible');
+// });
+// closeTrustBtn.addEventListener('click', () => {
+// 	trustPopUp.classList.remove('trust-visible');
+// });
 
-window.addEventListener('scroll', function() {
-	let mainMenuCoords = mainMenu.getBoundingClientRect();
-	let footerCoords = footer.getBoundingClientRect();
-	console.log(footerCoords.y);
-	console.log(window.innerHeight);
-	if (mainMenuCoords.y < -62 && !(footerCoords.y < window.innerHeight)) {
-		setTimeout(() => {
-			verticalMenu.classList.add('header__vertical-menu-show');
-		}, 150);
-	} else {
-		verticalMenu.classList.remove('header__vertical-menu-show');
-	}
-  });
-
+expandBtns.forEach((btn, i) => {
+	console.log(btn, i);
+	btn.addEventListener('click', () => {
+		safetyArts[i].classList.toggle('safety-expanded');
+	})
+})
