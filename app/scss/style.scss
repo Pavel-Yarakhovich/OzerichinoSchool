@@ -401,9 +401,9 @@ body {
 		margin: 20px auto;
 		display: flex;
 		flex-flow: column;
-		height: 250px;
+		height: 350px;
 		overflow: hidden;
-		border-bottom: 1px solid $blue;
+		border-bottom: 4px solid $blue;
 		position: relative;
 		transition: height 0.3s ease;
 
@@ -411,11 +411,12 @@ body {
 			position: absolute;
 			height: 22px;
 			padding: 12px 15px 3px;
-			border: 1px solid $blue;
+			border: 4px solid $blue;
+			border-bottom-color: $bg;
 			border-radius: 50% 50% 0 0;
-			background: $blue;
-			color: $yellow;
-			bottom: 0;
+			background: $bg;
+			color: $blue;
+			bottom: -4px;
 			left: 50%;
 			transform: translateX(-50%);
 			font-variant: small-caps;
@@ -424,6 +425,11 @@ body {
 			&:hover {
 				cursor: pointer;
 				border-top-color: $yellow;
+				border-left-color: $yellow;
+				border-right-color: $yellow;
+				border-bottom-color: $blue;
+				background: $blue;
+				color: $yellow;
 			}
 		}
 
@@ -445,7 +451,7 @@ body {
 			}
 
 			&_images {
-				height: 50px;
+				min-height: 0px;
 				display: flex;
 				justify-content: center;
 				background: url(../img/header_picture.jpg) no-repeat center center;
@@ -473,6 +479,16 @@ body {
 				margin: 0;
 				position: relative;
 				transition: all 0.2s ease 0.2s;
+
+				&-title {
+					font-size: 1.2rem;
+					font-weight: 700;
+				}
+
+				&-item {
+					margin: 0;
+					padding-left: 30px;
+				}
 
 				&:before {
 					position: absolute;
@@ -616,6 +632,104 @@ body {
 		}
 	}
 }
+
+.pupils {
+	width: 800px;
+	margin: 20px auto;
+	display: flex;
+	flex-flow: column;
+	border-bottom: 4px solid $blue;
+	position: relative;
+	transition: height 0.3s ease;
+
+	&__fac_schedule {
+		width: 100%;
+		border: 1px solid $blue;
+		box-sizing: border-box;
+	
+		tr {
+			height: 50px;
+			background: $bg;
+			transition: all 0.3s ease;
+
+			&:hover {
+				background: $blue;
+				color: $orange;
+
+				i {
+					color: $yellow;
+				}
+			}
+			
+			th, td {
+				text-align: center;
+				border: 1px solid $blue;
+				padding: 0 5px;
+
+				i {
+					color: $blue;
+				}
+			}
+
+			.teacher {
+				position: relative;
+
+				&__info {
+					display: none;
+					transition: all 0.3s ease;
+					position: absolute;
+					z-index: 1000;
+					top: -20px;
+					right: -160px;
+					font-size: 0;
+				}
+
+				&:hover {
+					.teacher__info {
+						min-height: 230px;
+						width: 150px;
+						right: -140px;
+						background: darken($bg, 10%);
+						font-size: 1rem;
+						display: flex;
+						flex-flow: column;
+						align-items: center;
+						justify-content: space-between;
+						padding: 5px;
+						box-sizing: border-box;
+						border: 1px solid darken($bg, 10%);
+						border-radius: 2px;
+						box-shadow: -4px 4px 8px darken($bg, 25%);
+
+						&-photo {
+							width: 140px;
+							height: 140px;
+							border: 1px solid $blue;
+							border-radius: 2px;
+						}
+
+						&-name {
+							color: $blue;
+							font-weight: 700;
+						}
+
+						&-subject {
+							color: $blue;
+							font-style: italic;
+						}
+					}
+				}
+			}
+		}
+
+		tr:first-child {
+			background: $yellow;
+			color: $blue;
+			font-weight: 700;
+		}
+	}
+}
+
 
 
 .footer {
