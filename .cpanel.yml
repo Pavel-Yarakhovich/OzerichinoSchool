@@ -1,0 +1,5 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/ozerichs/repositories/OzerichinoSchool/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp style.min.css $DEPLOYPATH
