@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/ozerichs/repositories/OzerichinoSchool/
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp style.min.css $DEPLOYPATH
+    - export REPOPATH=/home/ozerichs/repositories/OzerichinoSchool/*
+    - export SITEPATH=/home/ozerichs/app/
+    - /bin/rsync -rav --exclude '.git' --exclude '.cpanel.yml' --del $REPOPATH $SITEPATH
