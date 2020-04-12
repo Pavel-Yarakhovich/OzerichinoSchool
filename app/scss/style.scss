@@ -732,6 +732,15 @@ body {
   }
 }
 
+.pupils__item_images-item {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 15px;
+  border: 2px solid $orange;
+}
+
 .footer {
   min-height: 20vh;
   width: 100%;
